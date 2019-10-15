@@ -1,4 +1,4 @@
-//Segunda versão
+//Terceira versão
 
 #include <SPI.h>
 #include <Ethernet.h>
@@ -6,9 +6,9 @@
 
 
 byte mac[]    = {  0xDE, 0xED, 0xBA, 0xFE, 0xFE, 0xED };
-//IPAddress ip(192, 168, 0, 27); // endereço do gateway
-//IPAddress server(192, 168, 0, 16); //endereço do computador, ipv4
-//char server[] = "broker.hivemq.com"; 
+//IPAddress ip(172, 16, 0, 100); // endereço do gateway
+//IPAddress server(172, 16, 1, 62); //endereço do computador
+char server[] = "m14.cloudmqtt.com"; 
 //Porta ligada ao pino IN1 do modulo
 int porta_rele1 = 7;
 
@@ -18,36 +18,14 @@ void callback(char* topic, byte* payload, unsigned int length);
 EthernetClient ethClient;
 PubSubClient client(server,1883,callback,ethClient);
 
-void reconnect() {
-  // Loop until we're reconnected
-  while (!client.connected()) {
-    Serial.print("Attempting MQTT connection...");
-    // Attempt to connect
-    if (client.connect("arduinoClient")) {
-      Serial.println("connected");
-      // Once connected, publish an announcement...
-      client.publish("batatapub","Start");
-      // ... and resubscribe
-      client.subscribe("batatasub");
-
-     
-    } else {
-      Serial.print("failed, rc=");
-      Serial.print(client.state());
-      Serial.println(" try again in 5 seconds");
-      // Wait 5 seconds before retrying
-      delay(5000);
-    }
-  }
-}
-
 void setup()
 {
   Serial.begin(115200);
   //Define pinos para o rele como saida
   pinMode(porta_rele1, OUTPUT);
+  digitalWrite(porta_rele1, HIGH); //Desliga rele 1
   
-  client.setServer(server, 1883);
+  client.setServer(server,17676);
   client.setCallback(callback);  
 
   // Ethernet.begin(mac,ip); // Se falhar configura o IP para um ip vazio na rede!
@@ -71,28 +49,34 @@ String msg; //String que vai receber a mensagem do tópico
   Serial.println();
 
   //dependendo do conteúdo da mensagem realiza uma ação
-  if (msg.equals("L")){
+  if (msg.equals("1")){
     //aqui coloca comando para ligar o relé
       digitalWrite(porta_rele1, LOW);
       Serial.println("LIGADO");
-      client.publish("batatapub","LIGADO");
+      client.publish("Cafe","LIGADO");
       
     }
 
-   if (msg.equals("D")){
+   if (msg.equals("0")){
     //aqui coloca o comando pra desligar
      digitalWrite(porta_rele1, HIGH); //Desliga rele 1
      Serial.println("DESLIGADO");
-     client.publish("batatapub","DESLIGADO");
+     client.publish("Cafe","DESLIGADO");
     }  
   
 }
 
 void loop()
 {
-  if (!client.connected()) {
-    reconnect();
-  }
-  
+
+  if(!client.connected()){
+    client.connect("arduinoClient","qiahkics","mxmKGjKQtj4X");
+      Serial.println("connected");
+      // Once connected, publish an announcement...
+      client.publish("Cafe","Start");
+      // ... and resubscribe
+      client.subscribe("Cafe");
+    
+    }
   client.loop();
 }
