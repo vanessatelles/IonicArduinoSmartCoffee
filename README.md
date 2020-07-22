@@ -1,3 +1,11 @@
-# IonicArduinoSmartCoffee
+# SmartCoffee - Ionic Arduino
 
-Código para conectar Arduino UNO a um app desenvolvido em Ionic através de um tópico do broker cloud mqtt.
+Projeto que visa conectar o Arduino UNO a uma aplicação app.
+
+---
+
+## Tecnologias utilizadas
+
+- [Ionic](https://ionicframework.com/);
+- [Cloud MQTT](https://www.cloudmqtt.com/);
+- [Firebase](https://firebase.google.com/?hl=pt-br);
