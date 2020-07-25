@@ -16,3 +16,6 @@ Projeto que visa conectar o Arduino UNO a uma aplicação app.
 - Shield Ethernet;
 - Relé;
 
+---
+
+Mais informações sobre o projeto podem ser encontradas no artigo que fiz sobre o mesmo no [Linkedin](https://www.linkedin.com/pulse/tbt-de-quando-decidi-automatizar-melhor-amiga-dos-telles-da-silva) 
