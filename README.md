@@ -18,4 +18,4 @@ Projeto que visa conectar o Arduino UNO a uma aplicação app.
 
 ---
 
-Mais informações sobre o projeto podem ser encontradas no artigo que fiz sobre o mesmo no [Linkedin](https://www.linkedin.com/pulse/tbt-de-quando-decidi-automatizar-melhor-amiga-dos-telles-da-silva) 
+Mais informações sobre o projeto podem ser encontradas no artigo que fiz sobre o mesmo no Linkedin, para ler [clique aqui](https://www.linkedin.com/pulse/tbt-de-quando-decidi-automatizar-melhor-amiga-dos-telles-da-silva) .
