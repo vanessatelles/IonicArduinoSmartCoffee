@@ -1,6 +1,7 @@
-# SmartCoffee - Ionic Arduino
+# SmartCoffee - Ionic Arduino (PT)
 
-Projeto que visa conectar o Arduino UNO a uma aplicação app.
+Aplicação de internet das coisas:
+- Conecte sua cafeteira com a internet, através de um Arduino UNO e um Ionic app.
 
 
 
@@ -19,3 +20,12 @@ Projeto que visa conectar o Arduino UNO a uma aplicação app.
 ---
 
 Mais informações sobre o projeto podem ser encontradas no artigo que fiz sobre o mesmo no Linkedin, para ler [clique aqui](https://www.linkedin.com/pulse/tbt-de-quando-decidi-automatizar-melhor-amiga-dos-telles-da-silva) .
+
+
+--- 
+
+# SmartCoffee - Ionic Arduino (ENG)
+
+Internet of Things solution:
+
+- Connect your coffee machine to the internet using an Arduino Uno and Ionic App.
