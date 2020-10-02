@@ -29,3 +29,5 @@ Mais informações sobre o projeto podem ser encontradas no artigo que fiz sobre
 Internet of Things solution:
 
 - Connect your coffee machine to the internet using an Arduino Uno and Ionic App.
+
+More information about the project can be found in this article on Linkedin, although it is written in Portuguese. [Clique here](https://www.linkedin.com/pulse/tbt-de-quando-decidi-automatizar-melhor-amiga-dos-telles-da-silva) to read it.
